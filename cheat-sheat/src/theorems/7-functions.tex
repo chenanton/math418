@@ -1,0 +1,196 @@
+\section{Sequences and Series of Functions}
+
+\setcounter{theorem}{7}
+\begin{theorem}[Cauchy Criterion for Uniform Convergence]
+  $ \{f_n\} $ converges uniformly with the Cauchy Criterion,
+  i.e.
+  \begin{flalign*}
+    \forall \varepsilon > 0,\,
+    \exists N \in \mathbb{N}
+    \text{ s.t. }
+    \forall n > m > N,\,
+    x \in E,
+    \left| f_m(x) - f_n(x) \right| < \varepsilon.
+  \end{flalign*}
+\end{theorem}
+
+\setcounter{theorem}{9}
+\begin{theorem}[Weierstrass M Test]
+  If $ \left| f_n(x) \right| \leq M_n $
+  for all $ n > N $ and  $ x \in E $,
+  where $ \sum_{n=1}^{\infty} M_n $ is convergent.
+  then $ \{f_n\} $ converges uniformly.
+\end{theorem}
+
+\begin{theorem}[Interchange of Limits with Uniform Convergence]\quad
+
+  \begin{enumerate}
+    \item Suppose $ X $ is a metric space where
+      $ E \subseteq X $ and 
+      $ f_n \colon E \to \mathbb{R} $ \textbf{converges uniformly} to $ f \colon E \to \mathbb{R} $.
+    \item Also suppose that $ x $ is a limit point of $ E $.
+    \item Finally, suppose $ \lim_{t \to x} f_n(t) $ exists $ \forall n $.
+  \end{enumerate}
+
+  Then the limits can be interchanged, i.e.
+  \begin{flalign*}
+    \lim_{n\to \infty} \lim_{t\to x} f_n(x)
+    = \lim_{t\to x} \lim_{n\to \infty} f_n(t)
+  \end{flalign*}
+
+\end{theorem}
+
+\begin{theorem}[Continuity preserved by uniform convergence]
+  If
+  \begin{enumerate}
+    \item $ f_n \colon E \to \mathbb{R} $ is continuous,
+    \item  $ f_n \to f $ uniformly,
+  \end{enumerate}
+
+  then $ f $ is continuous on $ E $.
+\end{theorem}
+
+\begin{theorem}[Uniform convergence on a compact set]
+  If $ K $ is compact and
+  \begin{enumerate}
+    \item $ f_n \colon K \to \mathbb{R} $ is continuous,
+    \item  $ f_n \to f $ pointwise on $ K $,
+    \item $ f $ is continuous,
+    \item $ f_{n + 1}(x) \leq f_n(x) $ for $ x \in K $,
+  \end{enumerate}
+
+  then $ f_n \to f $ uniformly on  $ K $.
+
+  In other words, on a compact domain, 
+  a decreasing sequence of continuous functions
+  which converge to a continuous function
+  converges uniformly.
+\end{theorem}
+
+\setcounter{theorem}{14}
+\begin{theorem}[$ \mathcal{C}(X) $ is a complete metric space]
+\end{theorem}
+
+\newpage
+\begin{theorem}[Integrability is preserved by uniform convergence]
+  Suppose
+  \begin{enumerate}
+    \item $ f_n \in \mathcal{R}[a, b] $,
+    \item  $ f_n \to f $ uniformly,
+  \end{enumerate}
+
+  Then $ f \in \mathcal{R}[a, b] $, and in particular,
+  \begin{flalign*}
+    \lim_{n\to \infty} \int_{a}^{b} f_n(x) dx
+    = \int_{a}^{b} \lim_{n\to \infty} f_n(x) dx.
+  \end{flalign*}
+
+  Corollary is that this works for when a series of functions converges uniformly.
+\end{theorem}
+
+\begin{theorem}[Differentiability is preserved by uniform convergence]
+  Suppose
+  \begin{enumerate}
+    \item $ f_n $ is differentiable on $ [a, b] $,
+    \item  $ f_n \to f $ uniformly for some $ f $ 
+    \item $ \frac{d}{dx} f_n(x_0) \to \frac{d}{dx} f(x_0) $ for some $ x_0 \in [a, b] $
+      (anchor)
+  \end{enumerate}
+  \begin{flalign*}
+    \lim_{n\to \infty} \frac{d}{dx} f_n(x)
+    = \frac{d}{dx} \left( \lim_{n\to \infty} f_n(x) \right)
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Existence of continuous but nowhere differentiable function]
+  $ \exists $ continuous  $ f\colon \mathbb{R}\to \mathbb{R} $
+  s.t.  $ f'(x) $ does not exist  $ \forall x \in \mathbb{R} $.
+  \begin{itemize}
+    \item Idea is that you keep adding spikes of increasing period,
+      have the heights follow a geometric series so it converges.
+    \item Then the $ f_n $'s converge uniformly by  $ M $ test.
+  \end{itemize}
+\end{theorem}
+
+\setcounter{theorem}{22}
+
+\begin{theorem}[Selection Theorem]
+  Suppose
+  \begin{enumerate}
+    \item $ E $ is countable,
+    \item  $ f_n \colon E \to \mathbb{C} $ is pointwise bounded
+  \end{enumerate}
+
+  Then $ \exists \{f_{n_k}\} $ that is pointwise convergent.
+
+  Bounded implies convergent subsequence applied to entire function.
+\end{theorem}
+
+\begin{theorem}[Uniform convergence implies Equicontinuity on a compact domain]
+  Suppose
+  \begin{enumerate}
+    \item $ K $ is compact,
+    \item $ f_n\colon K \to \mathbb{R} $ is continuous,
+    \item  $ f_n \to f $ uniformly,
+  \end{enumerate}
+
+  then $ \{f_n\} $ is equicontinuous.
+\end{theorem}
+
+\newpage
+\begin{theorem}[Arzel\`{a}-Ascoli Theorem]
+  Suppose
+  \begin{enumerate}
+     \item $ K $ is compact,
+     \item $ f_n \colon K \to \mathbb{R} $ where  $ \{f_n\} $ is pointwise bounded and equicontinuous,
+  \end{enumerate}
+  then 
+  \begin{enumerate}
+    \item $ \{f_n\} $ is uniformly bounded,
+    \item $ \{f_n\} $ has a uniformly convergent subsequence  $ \{f_{n_k}\} $.
+  \end{enumerate}
+
+  An equicontinuous and pointwise bounded sequence of functions on a compact domain
+  has a uniformly continuous subsequence (and is also uniformly bounded).
+\end{theorem}
+
+\begin{theorem}[Weierstrass Theorem]
+  Suppose $ f \colon [a, b] \to \mathbb{R} $ is continuous.
+  Then $ \exists $ polynomials $ \{P_n\} $ s.t.
+  \begin{flalign*}
+    \forall \varepsilon > 0,\,
+    \exists N \text{ s.t. }
+    n \geq N 
+    \implies \|P_n - f\| < \varepsilon.
+  \end{flalign*}
+  (Any continuous function can be uniformly approximated by a sequence of polynomials on a closed interval.)
+\end{theorem}
+
+\begin{theorem}[Uniform Closure of an Algebra is an Algebra]
+\end{theorem}
+
+\setcounter{theorem}{30}
+\begin{theorem}[We can find a function that goes through two points]
+  Let $ \mathcal{A} $ be an algebra that separates points and vanishes at no point.
+  Then 
+  \begin{flalign*}
+    \forall x, y \in \mathcal{K} \ (x \neq y),\,
+    \forall c, d \in \mathbb{R},\,
+    \exists f \in \mathcal{A} \text{ s.t. }
+    f(x) = c \text{ and } f(y) = d.
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Stone-Weierstrass Theorem]
+  The uniform closure of any algebra of continuous functions on a compact set $ K $ which:
+  \begin{enumerate}
+    \item Separates points,
+    \item Vanishes at no points,
+  \end{enumerate}
+
+  is $ \mathcal{C}(K) $. 
+  The complex case also requires the algebra to be self-adjoint
+  ($ f \in \mathcal{A} \implies \overline{f} \in \mathcal{A} $).
+
+  (optimality of $ \mathcal{C}(K) $)
+\end{theorem}

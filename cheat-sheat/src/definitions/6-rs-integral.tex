@@ -1,0 +1,62 @@
+\setcounter{section}{5}
+\section{The Riemann-Stieltjes Integral}
+
+\begin{definition}[Partition]
+  A partition $ P $ of $ [a, b] $ is:
+  \begin{flalign*}
+    P = \{x_0 = a, \cdots, x_n = b\}
+  \end{flalign*}
+  such that $ x_{i - 1} \leq x_{i} $.
+\end{definition}
+
+\begin{definition}[Upper Riemann Integral]
+  \begin{flalign*}
+    \overline{ \int_{a}^{b} } f\,dx 
+    = \inf_{P} U(P, f),
+  \end{flalign*}
+  over all partitions $ P $ of  $ [a, b] $.
+\end{definition}
+
+\setcounter{definition}{1}
+\begin{definition}[Riemann-Stieltjes Integral]
+  Suppose
+  \begin{enumerate}
+    \item $ \alpha\colon [a, b] \to \mathbb{R} $ is monotonically increasing.
+    \item  $ f\colon [a, b] \to \mathbb{R} $.
+  \end{enumerate}
+
+  We say $ f $ is Riemann-Stieltjes integrable on $ [a, b] $
+  (i.e. $ f \in \mathcal{R}_{\alpha}[a, b] $) if:
+  \begin{flalign*}
+    \overline{ \int_{a}^{b} } f\,d\alpha
+    = \underline{ \int_{a}^{b} } f\,d\alpha.
+  \end{flalign*}
+\end{definition}
+
+\begin{definition}[Refinement]
+  Let $ P_1, P_2, P^* $ be partitions of $ [a, b] $.
+  \begin{enumerate}
+    \item $ P^* $ is a refinement of  $ P_1 $ if $ P_1 \subset P^* $.
+    \item $ P^* $ is the common refinement of $ P_1 $ and  $ P_2 $ if  $ P^* = P_1 \cup P_2 $.
+  \end{enumerate}
+\end{definition}
+
+\setcounter{definition}{13}
+\begin{definition}[Step Function]
+  \begin{flalign*}
+    I(x) = \begin{cases}
+      0 & \text{if } x \leq 0 \\
+      1 & \text{else.}
+    \end{cases}
+  \end{flalign*}
+\end{definition}
+
+\setcounter{definition}{22}
+\begin{definition}[Improper Integral]
+  Suppose $ f\colon [a, b] \to \mathbb{R} \in \mathcal{R}_{\alpha}[a, b]\ \forall b > a $.
+  The improper integral is defined as:
+  \begin{flalign*}
+    \int_{a}^{\infty} f(x)dx
+    = \lim_{b\to \infty} \int_{a}^{b} f(x)dx.
+  \end{flalign*}
+\end{definition}

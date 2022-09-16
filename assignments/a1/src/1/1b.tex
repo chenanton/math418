@@ -1,0 +1,39 @@
+\begin{enumerate}
+  \item We'll determine the probability of interest by considering hands where order matters
+    (e.g. $ abcde \neq bacde $ even if $ a = b $).
+    First count the number of hands with exactly one pair.
+    There are $ 6 $ ways to choose $ a $,
+    and thus there are $ \binom{5}{3} $ ways to 
+    choose the values $ b $, $ c $, and $ d $.
+    Since we differentiate hands by order,
+    there are $  \frac{5!}{2!} $ ways to order 
+    a hand given the values of $ a $, $ b $, $ c $, and $ d $
+    (the $ 2! $ in the denominator removing duplicates caused by the two $ a $'s).
+    Next we count the total number of poker dice hands,
+    which is to set $ abcde $ with any value for each of the die,
+    which is  $ 6^5 $.
+
+    Therefore the probability in question  $ p $ is:
+    \begin{flalign*}
+      p 
+      = \frac{1}{6^5} 6 \binom{5}{3} \frac{5!}{2!}
+      = \frac{25}{54}
+      \approx 0.4630.
+    \end{flalign*}
+  \item Again, we consider hands with different order to be different.
+    First count the number of hands with exactly two pairs.
+    There are $ \binom{6}{2} $ ways to choose the values of $ a $ and $ b $,
+    and thus there are $ 4 $ ways to 
+    choose the value of $ c $.
+    Since we differentiate hands by order,
+    there are $  \frac{5!}{2!2!} $ ways to order 
+    a hand given the values of $ a $, $ b $, $ c $.
+
+    Therefore the probability in question  $ p $ is:
+    \begin{flalign*}
+      p 
+      = \frac{1}{6^5} \binom{6}{2} (4) \frac{5!}{2!2!}
+      = \frac{25}{108}
+      \approx 0.2315.
+    \end{flalign*}
+\end{enumerate}

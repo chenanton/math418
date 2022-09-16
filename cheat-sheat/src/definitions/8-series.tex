@@ -1,0 +1,76 @@
+\section{Power Series, etc.}
+
+\begin{definition}[Exponential function]
+  For $ z \in \mathbb{C} $,
+  \begin{flalign*}
+    \exp(z) = \sum_{n=0}^{\infty} \frac{z^n}{n!}.
+  \end{flalign*}
+
+  Note that we can choose any $ z $ since the series
+  has infinite radius of convergence.
+\end{definition}
+
+\begin{definition}[Logarithm]
+  Define $ \log \colon (0, \infty) \to \mathbb{R} $ such that
+  \begin{flalign*}
+    \log \left( \exp(x) \right) = x
+    \tag{For $ x \in \mathbb{R} $}
+  \end{flalign*}
+
+  and 
+  \begin{flalign*}
+    \exp \left( \log (y) \right) = y.
+    \tag{For $ y > 0 $}
+  \end{flalign*}
+\end{definition}
+
+\begin{definition}[Inner product of functions]
+  For $ f, g \colon [a, b] \to \mathbb{C} $
+  where  $ f, g \in \mathcal{R}[a, b] $, 
+  the inner product is defined as
+  \begin{flalign*}
+    \langle f, g \rangle 
+    = \int_{a}^{b} f(x) \overline{g(x)} dx.
+  \end{flalign*}
+
+  Note that a metric defined with the inner product
+  is valid, but only on $ \mathcal{C}([a, b]) $.
+\end{definition}
+
+\begin{definition}[Orthogonality of functions]
+  Normal definition of orthogonality w.r.t. our definition of the inner 
+  product between functions.
+  
+  A set of functions is orthogonal if all pairs of distinct functions are orthogonal.
+\end{definition}
+
+\begin{definition}[Fourier basis]
+  $ \{\phi_n\} $ is the Fourier basis where
+  \begin{flalign*}
+    \phi_n(x) = \frac{1}{\sqrt{2\pi}} e^{inx}.
+  \end{flalign*}
+\end{definition}
+
+\begin{definition}[Fourier coefficient]
+  For $ f \in \mathcal{R} $, and an orthonormal basis  $ \{\phi_n\} $,
+  the  $ n $th Fourier coefficient $ c_n $ is defined as:
+  \begin{flalign*}
+    c_n = \langle f, \phi_n \rangle.
+  \end{flalign*}
+\end{definition}
+
+\begin{definition}[Fourier series]
+  The fourier series of $ f \in \mathcal{R} $ is:
+  \begin{flalign*}
+    \sum_{n=-\infty}^{\infty} c_n \phi_n
+  \end{flalign*}
+\end{definition}
+
+\begin{definition}[Inner product between sequences]
+  Let $ \{c_n\}_{n \in \mathbb{Z}} $ 
+  and let  $ \{\gamma_n\}_{n\in\mathbb{Z}} $.
+  Then
+  \begin{flalign*}
+    (c_n, y_n) = \sum_{n=-\infty}^{\infty} c_n \overline{\gamma}_n
+  \end{flalign*}
+\end{definition}

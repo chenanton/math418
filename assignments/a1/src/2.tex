@@ -1,0 +1,50 @@
+\section{Question 2}
+
+\begin{proof}
+  We will count the number of pairs $ (A, B) $ 
+  where  $ A, B \subset S $ s.t.
+  \begin{flalign*}
+    A \subset B.
+  \end{flalign*}
+
+  First, let's consider $ B $.
+  Since we can either include or exclude each element of $ S $
+  in a subset,
+  there are $ 2^n $ possible subsets of $ S $,
+  and in particular there are $ 2^n $ possible
+  assignments for $ B $. 
+  Furthermore, for $ k \in \mathbb{Z} $ s.t. $ 0 \leq k \leq n $,
+  the number of subsets $ B $ that have size $ k $ is $ \binom{n}{k} $.
+ 
+  Next, we count the number of subsets $ A $
+  that satisfy  $ A \subset B $ for a given $ B $ with size $ k $.
+  Since there are $ 2^{k} $ subsets of $ B $, 
+  the number of subset pairs $ (A, B) $ that satisfy $ A \subset B $ is:
+  \begin{flalign*}
+    \sum_{k=0}^{n} \binom{n}{k}2^k
+    = \sum_{k=0}^{n} \binom{n}{k}2^k1^{n-k}
+    = (2 + 1)^n 
+    = 3^n.
+    \tag{Binomial Theorem}
+  \end{flalign*}
+
+  We then count the total number of subset pairs $ (A, B) $.
+  From above, there are $ 2^n $ possible assignments to $ A $ 
+  and $ 2^n $ possible assignments to $ B $.
+  Hence the total number of subset pairs $ (A, B) $ is
+  \begin{flalign*}
+    (2^n)^2 = 4^n.
+  \end{flalign*}
+
+  Consider the probability space $ (\Omega, \mathcal{F}, P) $ where $ \Omega = 2^S \times 2^S $,
+  $ \mathcal {F} = 2^{\Omega} $, and $ P $ the uniform measure with respect to $ \Omega $ (given).
+  From class,
+  \begin{flalign*}
+    P(A \subset B)
+    &= P(\{(A, B) \in \Omega \colon A \subset B\}) \\
+    &= \frac{ \left| \{(A, B) \in \Omega \colon A \subset B\} \right| }{ \left| \Omega \right| } \\
+    &= \frac{3^n}{4^n} \\
+    &= \left( \frac{3}{4} \right)^n.
+  \end{flalign*}
+
+\end{proof}

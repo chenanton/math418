@@ -1,0 +1,58 @@
+\begin{proof}
+  $ \mathcal{F} $ is an algebra if the following three conditions hold:
+
+  \begin{enumerate}
+    \item $ \varnothing \in \mathcal{F} $,
+    \item $ A \in \mathcal{F} \implies A^c \in \mathcal{F} $,
+    \item $ A, B \in \mathcal{F} \implies A \cup B \in \mathcal{F} $.
+  \end{enumerate}
+
+  Assume that
+  \begin{flalign*}
+    A, B \in \mathcal{F} 
+    \implies A \setminus B \in \mathcal{F}.
+  \end{flalign*}
+
+  First we'll show that (ii) holds.
+  Let $ A \in \mathcal{F} $.
+  Since $ \Omega \in \mathcal{F} $ as well,
+  the given assumption tells us that
+  $ \Omega \setminus A = A^c = \mathcal{F} $.
+
+  Note that this implies that (i) holds as well,
+  since $ \Omega^c = \varnothing $.
+
+  Finally, we'll show that (iii) holds.
+  Note that showing (iii) is sufficient for the proof
+  as finite unions follow from pairwise unions via induction (mentioned in class).
+  Let $ A, B \in \mathcal{F} $
+  and suppose that $ A \cup B \notin \mathcal{F} $.
+  Observe that
+  \begin{flalign*}
+    &A^c \cup A 
+    = \Omega \\
+    &\implies (A^c \setminus B) \cup (A \cup B) 
+    = \Omega \\
+    &\implies 
+    A \cup B 
+    = \Omega \setminus (A^c \setminus B).
+  \end{flalign*}
+
+  By the contrapositive of the assumption,
+  \begin{flalign*}
+    A \cup B
+    = \Omega \setminus (A^c \setminus B)
+    \notin \mathcal{F}
+    \implies 
+    \text{either } \Omega \notin \mathcal{F}
+    \text{ or } (A^c \setminus B) \notin \mathcal{F},
+  \end{flalign*}
+
+  but we know this not to be true,
+  since $ \Omega \in \mathcal{F} $ is given,
+  and  $ A^c \setminus B \in \mathcal{F} $ 
+  by (ii) and the assumption.
+  So (iii) holds by contradiction.
+  As all conditions hold,
+  we conclude that $ \mathcal{F} $ is an algebra.
+\end{proof}

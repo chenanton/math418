@@ -1,0 +1,32 @@
+\section{Functions of Multiple Variables}
+
+\setcounter{definition}{10}
+
+\begin{definition}[Differentiability of multi-variable function.]
+  Let $ E \subset \mathbb{R}^n $ be open,
+  and let  $ f\colon E \to \mathbb{R}^m $ be differentiable on $ E $.
+  $ f $ is differentiable at $ x $ if
+  $ \exists $ a linear map $ A\colon E \to \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m) $ 
+  s.t.
+  \begin{flalign*}
+    \lim_{h\to 0} \frac{ \left| f(x + h) - f(x) - Ah \right| }{ \left| h \right| } \to 0.
+  \end{flalign*}
+\end{definition}
+
+\setcounter{definition}{15}
+
+\begin{definition}[Partial derivative]
+  For $ f \colon \mathbb{R}^n \to \mathbb{R}^m $,
+  \begin{flalign*}
+    \frac{\partial f_j}{\partial x_i} (x) 
+    = \lim_{h\to \infty}  \frac{ f_j(x + e_ih) - f_j(x)  }{ h }.
+  \end{flalign*}
+\end{definition}
+
+\begin{definition}[Gradient]
+  Applies to $ f \colon \mathbb{E} \to \mathbb{R} $ where $ E \subset \mathbb{R}^n $. 
+  \begin{flalign*}
+    \nabla f(x)
+    &= \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(x) e_i.
+  \end{flalign*}
+\end{definition}

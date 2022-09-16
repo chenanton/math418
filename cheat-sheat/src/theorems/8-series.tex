@@ -1,0 +1,140 @@
+\section{Power Series}
+
+\begin{theorem}[Convergent power series converges uniformly]
+  If $ f(x) = \sum c_n x^n $ converges on $ |x| < R $,
+  then $ f_n\colon [-R + \varepsilon, R - \varepsilon] $ converges uniformly 
+  $ \forall \varepsilon > 0 $ (partial sum).
+
+  Furthermore, the derivative is well-defined for $ |x| < R $,
+  \begin{flalign*}
+    f'(x) = \sum nc_n x^{n - 1}.
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Abel's Theorem]
+  Suppose  
+  \begin{enumerate}
+    \item $ \sum c_n $ converges,
+    \item $ f(x) = \sum c_n x^n $ has radius of convergence $ 1 $.
+  \end{enumerate}
+
+  Then 
+  \begin{flalign*}
+    \lim_{x\to 1^-} f(x) = \sum c_n.
+  \end{flalign*}
+
+  (Consistent behavior as we approach radius of convergence).
+\end{theorem}
+
+\begin{theorem}[Interchange of summation order]
+  If 
+  \begin{flalign*}
+    \sum_{i=1}^{\infty} \sum_{j=1}^{\infty} \left| a_{ij} \right| < \infty,
+  \end{flalign*}
+
+  then 
+  \begin{flalign*}
+    \sum_{i=1}^{\infty} \sum_{j=1}^{\infty} a_{ij}
+    = \sum_{j=1}^{\infty} \sum_{i=1}^{\infty} a_{ij}.
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Taylor Series]
+  If $ \sum c_n x^n $ converges on  $ \left| x \right| < R $,
+  then $ \forall |a| < R $,
+  \begin{flalign*}
+    f(x) = \sum_{i=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x - a)^n
+  \end{flalign*}
+
+  \textbf{at least} on $ |x - a| < R - |a| $.
+
+
+  (We can center a Taylor series within the radius of convergence).
+\end{theorem}
+
+\begin{theorem}[Series on limiting sequence uniquely identifies sequence.]
+  Let $ \sum a_n x^n $ and  $ \sum b_n x^n $ have the same radius of convergence
+  $ \geq R $.
+  Also suppose that $ D \subset (-R, R) $ has a limit point in  $ (-R, R) $.
+  If  $ \sum a_n x^n = \sum b_n x^n $  $ \forall x\in D $,
+  then $ a_n = b_n $.
+\end{theorem}
+
+\newpage
+
+\setcounter{theorem}{7}
+\begin{theorem}[Fundamental Theorem of Algebra]
+  All complex polynomials have a root.
+\end{theorem}
+
+\setcounter{theorem}{10}
+
+\begin{theorem}[Optimality of partial Fourier series coefficients]
+  Suppose $ f \in \mathcal{R}[a, b] $ 
+  and  $ \{\phi_n\} $ is orthonormal.
+  Then let $ S_n = \sum_{m=1}^{n} c_m \phi_m $ 
+  and let $ T_n = \sum_{m=1}^{n} a_m \phi_m $.
+  Then
+  \begin{flalign*}
+    \|f - S_n\|_2 \leq \|f - T_n\|_2
+  \end{flalign*}
+
+  $ \forall n $. 
+  Equality only holds if $ a_m = c_m $  $ \forall m $.
+  Note this is w.r.t. L2 norm (defined with inner product),
+  and not infinity norm.
+
+  Corollaries:
+  \begin{itemize}
+    \item $ \|S_n\|_2^2 \leq \|f\|_2^2 $.
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Changes in definition]
+  Now 
+  \begin{enumerate}
+    \item We only consider functions $ f \colon [-\pi, \pi] \to \mathbb{C} $.
+    \item $ \langle f, g \rangle = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x)\bar{g}(x)dx $.
+  \end{enumerate}
+\end{theorem}
+
+\setcounter{theorem}{13}
+
+\begin{theorem}[Lipchitz continuity implies convergence of Fourier series]
+  Suppose $ x \in [-\pi, \pi] $,
+  and $ f \colon [-\pi, \pi] \to \mathbb{C} $. 
+  If $ \exists \delta, M > 0 $ s.t.
+  \begin{flalign*}
+    \left| f(x + t) - f(x) \right| \leq M|t|
+  \end{flalign*}
+  $ \forall |t| < \delta $,
+  then
+  \begin{flalign*}
+    \lim_{N\to \infty} S_N(x) = f(x).
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Trig polynomial approximation]
+  All $ 2\pi $-periodic continuous functions can be uniformly approximated by a trig polynomial.
+
+  Let  $ f \colon \mathbb{R} \to \mathbb{C} $ be  $ 2\pi $-periodic.
+  Then  $ \forall \varepsilon > 0 $,
+  $ \exists $ a trig polynomial in the form
+  \begin{flalign*}
+    p_N(x) = \sum_{n=-N}^{N} a_n e^{inx}
+  \end{flalign*}
+  s.t. $ \|p_N - f\| < \varepsilon $.
+  
+\end{theorem}
+
+\begin{theorem}[Convergence of Fourier series in L2]
+  For $ f \in \mathcal{R}[-\pi, \pi] \to \mathbb{C} $,
+  \begin{enumerate}
+    \item $ \lim_{N\to \infty} \|f - S_N(f)\|_2 = 0 $.
+    \item Parseval relation: $ \langle f, g \rangle = (c, \gamma) $.
+      \begin{itemize}
+        \item Bessel's inequality follows from this:
+          $ \|f\|_2^2 = (c, c) = \sum_{n=-\infty}^{\infty} |c_n|^2 $.
+      \end{itemize}
+  \end{enumerate}
+\end{theorem}

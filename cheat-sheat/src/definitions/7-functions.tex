@@ -1,0 +1,116 @@
+\section{Sequences and Series of Functions}
+
+\setcounter{definition}{6}
+\begin{definition}[Uniform Convergence]
+  For functions $ f_n\colon E \to \mathbb{R} $,
+  A sequence of functions $ \{f_n\} $ converges uniformly to $ f $ if
+  \begin{flalign*}
+    \forall \varepsilon > 0,\,
+    \exists N \in \mathbb{N}
+    \text{ s.t. } \forall x \in E,\, n > N,
+    \left| f_n(x) - f(x) \right| < \varepsilon.
+  \end{flalign*}
+\end{definition}
+
+\setcounter{definition}{8}
+\begin{definition}[Uniform Convergence for Series]
+  The series $ \sum_{n=1}^{\infty} f_n(x) $ converges uniformly 
+  if for partial sums
+  \begin{flalign*}
+    S_n = \sum_{k=1}^{n} f_k(x),
+  \end{flalign*}
+
+  $ \{S_n\} $ converges uniformly.
+\end{definition}
+
+\setcounter{definition}{13}
+\begin{definition}[Supremum Norm]
+  Let $ f \in \mathcal{C}(X) $,
+  where $ \mathcal{C}(X) = \{f\colon X \to \mathbb{R}\colon f \text{ is bounded and continuous on } X\} $.
+  The supremum (or infinity) norm of $ f $
+  is 
+  \begin{flalign*}
+    \|f\| = \sup\{f(x)\colon x \in X\}.
+  \end{flalign*}
+\end{definition}
+
+\setcounter{definition}{18}
+\begin{definition}[Pointwise Bounded]
+  A sequence of functions $ \{f_n\} $
+  (with $ f_n \colon E \to \mathbb{R} $)
+  is pointwise bounded if
+  $ \exists \phi \colon E \to \mathbb{R} $
+  s.t. 
+  $ \left| f_n(x) \right| < \phi(x) $ 
+  $ \forall x \in E $, $ n \in \mathbb{N} $.
+\end{definition}
+
+\begin{definition}[Uniform Bounded]
+  $ \{f_n\} $ is uniform bounded
+  if the sequence is pointwise bounded
+  for some $ \phi(x) = M $ $ \forall x \in E $.
+\end{definition}
+
+\setcounter{definition}{21}
+\begin{definition}[Equicontinuity]
+  A set of functions $ \mathcal{F} $
+  (with $ f\colon E \to \mathbb{R} $ for $ f \in \mathcal{F} $)
+  is equicontinuous on $ E $
+  if 
+  \begin{flalign*}
+    \forall \varepsilon > 0,\,
+    \exists \delta > 0
+    \text{ s.t. }
+    \forall x, y \in E,\,
+    f \in \mathcal{F},
+    d(x, y) < \delta \implies 
+    \left| f(x) - f(y) \right| < \varepsilon
+  \end{flalign*}
+\end{definition}
+
+\setcounter{definition}{27}
+\begin{definition}[Algebra]
+  An algebra $ \mathcal{A} $ satisfies:
+  $ \forall f, g \in \mathcal{A} $,
+  \begin{enumerate}
+    \item $ f + g \in \mathcal{A} $,
+    \item $ cf \in \mathcal{A} $ for $ c \in \mathbb{R} $,
+    \item $ fg \in \mathcal{A} $.
+  \end{enumerate}
+
+  A set of functions which are closed under addition, scalar multiplication,
+  and regular multiplication.
+\end{definition}
+
+\begin{definition}[Uniform Closure]
+  \begin{flalign*}
+    \overline{\mathcal{A}}
+    = \left\{f\colon E \to \mathbb{R} \mid \exists \{f_n\} \subset \mathcal{A}
+    \text{ s.t. } f_n \to f \text{ uniformly.}\right\}
+  \end{flalign*}
+  The set of functions that an algebra can uniformly approximate.
+  Or the set of limit points of an algebra w.r.t. the supremum norm.
+  
+\end{definition}
+
+\begin{definition}[Separates points]
+  An algebra  $ \mathcal{A} $ on $ X $ separates points if 
+  \begin{flalign*}
+    \forall x, y \in X \text{ s.t. } x \neq y,
+    \exists f \in \mathcal{A} \text{ s.t. }
+    f(x) \neq f(y).
+  \end{flalign*}
+
+  (We can choose functions from the algebra to make an injection)
+\end{definition}
+
+\begin{definition}[Vanishes at no point]
+  An algebra  $ \mathcal{A} $ on $ X $ vanishes at no point if
+  \begin{flalign*}
+    \forall x \in X\,
+    \exists f \in \mathcal{A}
+    \text{ s.t. } f(x) \neq 0.
+  \end{flalign*}
+
+  (Every point is non-zero at least for one function)
+\end{definition}

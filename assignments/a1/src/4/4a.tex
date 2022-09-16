@@ -1,0 +1,35 @@
+Let $ E = \{E_{\alpha} \colon \alpha \in A\} $
+where $ E \neq \varnothing $.
+
+\begin{proof}
+
+  Let
+  \begin{flalign*}
+    \sigma \left( E \right) = \bigcap_{\beta} \mathcal{F}_{\beta}
+  \end{flalign*}
+
+  where $ \mathcal{F}_{\beta} $ is a $ \sigma $-algebra
+  s.t. $ E \subset \mathcal{F}_{\beta} $.
+  
+  We'll show that $ \sigma(E) $ is indeed a  $ \sigma $-algebra,
+  since all $ \mathcal{F}_{\beta} $ are also $ \sigma $-algebras.
+  First  $ \varnothing \in \sigma(E) $,
+  since  $ \varnothing \in \mathcal{F}_{\beta} $ $ \forall \beta $.
+  Similar logic shows that $ \sigma(E) $
+  is closed under complements and countable unions, as follows.
+  Let $ B \in \sigma(E) $.
+  We can be sure that $ B^c \in \sigma(E) $,
+  since $ B^c \in \mathcal{F}_{\beta} $  $ \forall \beta $.
+  Let $ B_1, B_2, \cdots $ be a countable number of sets.
+  We can also be sure that $ \bigcup_{n=1}^{\infty} \in \sigma(E) $
+  since $ \bigcup_{n=1}^{\infty} \in \mathcal{F}_{\beta} $
+  $ \forall \beta $.
+  In particular, $ \sigma(E) $ is a $ \sigma $-algebra.
+  
+
+  It is then trivial that $ \sigma(E) $ is the smallest of all 
+  $ \sigma $-algebras $ \mathcal{F}_{\beta} $
+  s.t. $ E_{\alpha} \in \mathcal{F}_{\beta} $ $ \forall \alpha \in A $
+  by definition of intersection.
+
+\end{proof}

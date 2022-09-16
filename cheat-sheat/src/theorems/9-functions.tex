@@ -1,0 +1,73 @@
+\section{Functions of Multiple Variables}
+
+\begin{theorem}[Banach fixed-point/contraction mapping theorem]
+  A contraction mapping theorem has a unique fixed point.
+
+  Let $ (X, d) $ be a complete metric space.
+  If the map  $ \varphi \colon X \to X $ satisfies
+  $ d(\varphi(x), \varphi(y)) \leq c d(x, y) $
+  for some $ c < 1 $ and $ \forall x \in X $,
+  then $ \exists ! x \in X $ s.t. $ \varphi(x) = x $.
+\end{theorem}
+
+\setcounter{theorem}{11}
+
+\begin{theorem}[Uniqueness of derivative $ A $]
+\end{theorem}
+
+\setcounter{theorem}{14}
+
+\begin{theorem}[Chain rule]
+  Let $ f \colon E \to \mathbb{R}^m $ where  $ E \subset \mathbb{R}^n $ is open, and
+  let  $ g \colon V \colon \mathbb{R}^k $ where  $ V \subset \mathbb{R}^m $ is open
+  s.t. $ f(E) \subset V $. 
+  Let $ f $ be differentiable at $ x $ 
+  and let $ g $ be differentiable at $ f(x) $.
+  Then $ g \circ f $ is differentiable at $ x $,
+  where
+  \begin{flalign*}
+    (g \circ f)'(x) = g'(f(x))f'(x).
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Derivative linear map is defined by the Jacobian]
+  Suppose $ f \colon E \to \mathbb{R}^m $ 
+  where  $ E \subset \mathbb{R}^n $ is open.
+  If $ f $ is differentiable,
+  then $ \frac{\partial f_j}{ \partial x_i } $ exists
+  and $ A = $ the Jacobian of  $ f $.
+\end{theorem}
+
+\begin{theorem}[Lipchitz continuity defined by bounded derivative]
+  Suppose $ f \colon E \to \mathbb{R}^m $
+  where  $ E \subset \mathbb{R}^n $ is convex.
+  Also suppose that $ f $ is differentiable
+  and $ \|f'(x)\| < M $ for some $ M $ and for all $ x $.
+  Then  $ f $ is Lipchitz continuous on $ E $,
+  and in particular
+  \begin{flalign*}
+    \|f(a) - f(b)\| \leq M|a - b|
+  \end{flalign*}
+  $ \forall a, b \in E $.
+\end{theorem}
+
+\begin{theorem}[Inverse function theorem in one dimension]
+  If $ f \colon \mathbb{R} \to \mathbb{R} $ 
+  is strictly monotone and differentiable,
+  then $ g = f^{-1} $ is also differentiable,
+  where  $ g'(f(x)) = \frac{1}{f'(x)} $.
+  In particular, $ f'(x) \neq 0 $  $  \forall x $.
+\end{theorem}
+
+\begin{theorem}[Inverse Function Theorem (multiple variables)]
+  Let $ f \colon E \to R^n $ where  $ E \subset \mathbb{R}^n $ is open.
+  Also suppose $ f $ is continuously differentiable
+  and $ f'(x) $ is invertible $ \forall x \in E $.
+
+  Then $ \exists $ an open $ V \subset f(E) $
+  s.t.  $ f $ is a bijection.
+  If we define $ g \colon V \to E $ 
+  to be the inverse,
+  $ g $ is also continuously differentiable
+  where  $ g'(f(x))f'(x) = I $.
+\end{theorem}

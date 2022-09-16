@@ -1,0 +1,73 @@
+Let $ \Omega = [0, 5] $
+and consider 
+\begin{flalign*}
+  \mathcal{F} = \{
+    \varnothing,
+    [0, 5],
+    [1, 3],
+    [2, 4],
+    [0, 1] \cup [3, 5],
+    [0, 2] \cup [4, 5]
+  \} 
+\end{flalign*}
+on $ \Omega $.
+We claim that while $ \mathcal{F} $ 
+is closed under complements and finite disjoint unions,
+$ \mathcal{F} $ is not an algebra on $ \Omega $.
+
+\begin{proof}
+
+  First we'll verify that $ \mathcal{F} $
+  is closed under complements.
+  This can be easily verified since
+  \begin{itemize}
+    \item $ \varnothing^c = [0, 5] $,
+    \item $ [1, 3]^c = [0, 1] \cup [3, 5] $,
+    \item $ [2, 4]^c = [0, 2] \cup [4, 5] $.
+  \end{itemize}
+
+  Next we can verify that $ \mathcal{F} $ is closed under 
+  finite disjoint unions by verifying
+  that $ \forall I \in \mathcal{F} $ 
+  where $ I \neq \varnothing $,
+  all other $ J \in \mathcal{F} $
+  s.t. $ I \neq J $
+  satisfies $ I \cap J = \varnothing $ 
+  only if  $ J = \varnothing $ or $ I = J^c $.
+  If $ I = \varnothing $,
+  the only $ J $ satisfying the above condition
+  is $ [0, 5] $.
+  In particular, this means no additional
+  intervals need to be added to $ \mathcal{F} $,
+  and is thus closed under pairwise disjoint unions
+  and hence is also closed under finite disjoint unions.
+
+  But note that $ [1, 4] = [1, 3] \cup [2, 4] \notin \mathcal{F} $,
+  so $ \mathcal{F} $ is not closed under finite unions.
+  Therefore we can conclude that $ \mathcal{F} $
+  is not an algebra.
+  
+\end{proof}
+
+% ideas:
+% \begin{enumerate}
+%   \item try to use part A contrapositive
+%   \item $ A \setminus B \notin \mathcal{F} $ where $ A, B \in \mathcal{F} $ implies that  
+%     $ \mathcal{F} $ is not a sigma algebra.
+%   \item  $ A^c \cup B \notin \mathcal{F} $ if  $ A^c \cap B \neq \varnothing $. 
+%   \item Must have $ A^c \cap B \neq A^c $ and $ A^c \cap B \neq B $ 
+%   \item Must be finite unions, so no tricks using infinite unions.
+% \end{enumerate}
+
+% example
+% \begin{flalign*}
+%   \mathcal{F} = \{\varnothing, [0, 1], [0, 2]  \}
+% \end{flalign*}
+
+% if we have $ A, B \in \mathcal{F} $
+% where
+% \begin{enumerate}
+%   \item $ A \cap B \neq \varnothing $,
+%   \item $ A \not\subset B $ and  $ B \not\subset A $.
+%   \item then $ A^c \not\subset B $ and  $ B^c \not\subset A $.
+% \end{enumerate}

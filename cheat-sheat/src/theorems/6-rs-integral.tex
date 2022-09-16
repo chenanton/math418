@@ -1,0 +1,229 @@
+\setcounter{section}{5}
+\section{The Riemann-Stieltjes Integral}
+
+\begin{theorem}[Riemann Integrability]
+  $ f\colon [a, b] \to \mathbb{R} $ is Riemann integrable if 
+  \begin{flalign*}
+    \overline{ \int_{a}^{b} } f\,dx = 
+    \underline{ \int_{a}^{b} } f\,dx.
+  \end{flalign*}
+\end{theorem}
+
+\setcounter{theorem}{3}
+\begin{theorem}[Refinement Improves Integral]
+  If $ P^* $ refines $ P $, then
+  \begin{flalign*}
+    L(P, f, \alpha) \leq L(P^*, f, \alpha) \leq U(P^*, f, \alpha) \leq U(P, f, \alpha).
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Upper RS Integral Bounds Lower RS Integral]
+  \begin{flalign*}
+    \underline{ \int_{a}^{b} } f\,d\alpha
+    \leq \overline{ \int_{a}^{b} } f\,d\alpha.
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Characterization of RS Integrability]
+  The following are equivalent:
+  \begin{enumerate}
+    \item $ f \in \mathcal{R}_{\alpha}[a, b] $,
+    \item $ \forall \varepsilon > 0 $ $ \exists P_{\varepsilon} $ such that 
+      $ U(P, f, \alpha) - L(P, f, \alpha) < \epsilon $.
+  \end{enumerate}
+\end{theorem}
+
+\setcounter{theorem}{7}
+\begin{theorem}[Continuous $ f $ Entails Integrability]
+  Suppose
+  \begin{enumerate}
+    \item $ f\colon [a, b] \to \mathbb{R} \in \mathcal{C}_0[a, b]$,
+    \item  $ \alpha\colon [a, b] \to \mathbb{R} $ is monotonically increasing.
+  \end{enumerate}
+  Then $ f \in \mathcal{R}_{\alpha}[a, b] $.
+\end{theorem}
+
+\begin{theorem}[Continuous $ \alpha $ Entails Integrability]
+  Suppose 
+  \begin{enumerate}
+    \item $ f $ is monotonically increasing.
+    \item $ \alpha \in \mathcal{C}_0[a, b]$,
+  \end{enumerate}
+  Then $ f \in \mathcal{R}_{\alpha}[a, b] $.
+\end{theorem}
+
+\begin{theorem}[Continuous $ f $ or  $ \alpha $ Entails Integrability]
+  Let $ S = \{s_1, \cdots, s_k\} \subset [a, b] $ be finitely many points.
+  \begin{enumerate}
+    \item $ f $ is continuous except for at $ s_i \in S $.
+    \item $ \alpha $ is monotonically increasing, and continuous at each $ s_i $.
+  \end{enumerate}
+  Then $ f \in \mathcal{R}_{\alpha}[a, b] $.
+\end{theorem}
+
+\newpage
+
+\begin{theorem}[Continuous Mapping On Function Preserves Integrability]
+  Suppose
+  \begin{enumerate}
+    \item $ f \in \mathcal{R}_{\alpha}[a, b] $,
+    \item $ m \leq f(x) \leq M $ for $ a \leq x \leq b $,
+    \item $ \phi\colon[m, M] \to \mathbb{R} \in \mathcal{C}_0 $,
+  \end{enumerate}
+  Then $ \phi \circ f \in \mathcal{R}_{\alpha}[a, b] $.
+\end{theorem}
+
+\begin{theorem}[Linearity and Related Properties]
+  Suppose $ f, f_1, f_2 \in \mathcal{R}_{\alpha}[a, b] $.
+  \begin{enumerate}
+    \item Linearity of $ f $.
+      \begin{enumerate}
+        \item $ f_1 + f_2 \in \mathcal{R}_{\alpha}[a, b] $. 
+        \item $ cf \in \mathcal{R}_{\alpha}[a, b] $ (for $ c \in \mathcal{R} $). 
+      \end{enumerate}
+    \item Integral preserves order.
+      \begin{itemize}
+        \item If $ f_1 \leq f_2 $ on $ [a, b] $, then
+          \begin{flalign*}
+            \int_{a}^{b}f_1\,d\alpha
+            \leq \int_{a}^{b}f_2\,d\alpha
+          \end{flalign*}
+      \end{itemize}
+    \item Limits of integration can be split.
+      \begin{itemize}
+        \item $ f \in \mathcal{R}_{\alpha}[a, c] $ and $ f \in \mathcal{R}_{\alpha}[c, b] $.
+          Particularly,
+      \end{itemize}
+      \begin{flalign*}
+        \int_{a}^{b} f\, d\alpha = 
+        \int_{a}^{c} f\,d\alpha
+        + \int_{c}^{b} f\,d\alpha.
+        \tag{Where $ c \in (a, b) $}
+      \end{flalign*}
+    \item Upper bound on integral.
+      \begin{flalign*}
+        \left| \int_{a}^{b}f\,d\alpha \right| \leq M(\alpha(b) - \alpha(a))
+        \tag{Where $ M = \sup\{f(x)\colon a \leq x \leq b\} $}
+      \end{flalign*}
+    \item Linearity of $ \alpha $.
+      \begin{itemize}
+        \item Suppose $ f \in \mathcal{R}_{\alpha_1} $ and $ f \in \mathcal{R}_{\alpha_2} $.
+        \item Then  $ f \in \mathcal{R}_{\alpha_1 + \alpha_2} $ and 
+          \begin{flalign*}
+            \int_{a}^{b} f\,d(\alpha_1 + \alpha_2) 
+            = \int_{a}^{b} f\,d\alpha_1 + \int_{a}^{b} f\,d\alpha_2.
+          \end{flalign*}
+      \end{itemize}
+  \end{enumerate}
+\end{theorem}
+
+\newpage
+
+\begin{theorem}[Triangle inequality]
+  For $ f \in \mathcal{R}_{\alpha}[a, b] $,
+  \begin{flalign*}
+    \left| \int_{a}^{b} f\, d\alpha \right|
+    \leq \int_{a}^{b} |f|d\alpha.
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Product of two integrable functions is integrable]
+  If $ f, g \in \mathcal{R}_{\alpha}[a, b] $, then $ fg \in \mathcal{R}_{\alpha}[a, b] $.
+\end{theorem}
+
+\begin{theorem}[Integrator step at continuous point extracts value]
+  Suppose
+  \begin{enumerate}
+    \item $ f $ is bounded,
+    \item $ f $ is continuous,
+    \item  $ s \in (a, b) $,
+    \item  $ \alpha(x) = I(x - s) $.
+  \end{enumerate}
+  Then,
+  \begin{flalign*}
+    \int_{a}^{b} f\,d\alpha = f(s).
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Infinite step integrator]
+  Suppose
+  \begin{enumerate}
+    \item $ \displaystyle \alpha(x) = \sum_{i=1}^{ \infty } c_i I(x - s_i) $
+      \begin{itemize}
+        \item Where $ c_n \geq 0 $ such that  $ \sum_{i=1}^{ \infty } c_i < \infty $,
+        \item and $ \{s_i\} $ are distinct points,
+      \end{itemize}
+    \item $ f $ is continuous.
+  \end{enumerate}
+  Then 
+  \begin{flalign*}
+    \int_{a}^{b} f\,d\alpha 
+    = \sum_{i=1}^{\infty} c_i f(s_i).
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Explicit Form of Integrator]
+  Suppose
+  \begin{enumerate}
+    \item $ \alpha \in C_1[a, b]$ and monotone. 
+    \item $ \alpha' \in \mathcal{R}_{\alpha}[a, b] $.
+  \end{enumerate}
+  Then,
+  \begin{flalign*}
+    \int_{a}^{b}f\,d\alpha
+    = \int_{a}^{b} f(x)\alpha'(x) dx
+  \end{flalign*}
+\end{theorem}
+
+\newpage
+\setcounter{theorem}{18}
+\begin{theorem}[Change of Variables]
+  Suppose
+  \begin{enumerate}
+    \item $ \phi $ is 
+      \begin{enumerate}
+        \item Strictly increasing on $ [a, b] $,
+        \item Continuous on $ [a, b] $,
+        \item Onto on  $ [a, b] $.
+      \end{enumerate}
+    \item $ f \in \mathcal{R}_{\alpha}[a, b] $.
+  \end{enumerate}
+  Then,
+  \begin{flalign*}
+    \int_{a}^{b}f\,d\alpha
+    = \int_{\phi^{-1}(a)}^{\phi^{-1}(b)} (f\circ\phi)\, d(\alpha\circ\phi).
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Continuity and Differentiability of Antiderivative]
+  Let $ f \in \mathcal{R}_{\alpha}[a, b] $ with  $ x \in [a, b] $.
+  If we define 
+  \begin{flalign*}
+    F(x) = \int_{a}^{x} f(t)dt,
+  \end{flalign*}
+  then
+  \begin{enumerate}
+    \item $ F $ is continuous on $ [a, b] $,
+    \item For $ x_0 $ where $ f $ is continuous at $ x_0 $,
+      $ F'(x_0) = f(x_0) $.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Fundamental Theorem of Calculus]
+  If there exists $ F $ such that:
+  \begin{enumerate}
+    \item $ F $ is differentiable on  $ [a, b] $
+    \item $ F' = f $,
+  \end{enumerate}
+  \begin{flalign*}
+    F(b) - F(a) = \int_{a}^{b} f(x) dx
+  \end{flalign*}
+\end{theorem}
+
+\begin{theorem}[Integration By Parts]
+  For differentiable $ F, G $ such that $ F' = f $ and  $ G' = g $,
+  \begin{flalign*}
+    \int_{a}^{b} F(x)g(x) dx
+    &= F(b)G(b) - F(a)G(a) - \int_{a}^{b} f(x)G(x) dx.
+  \end{flalign*}
+\end{theorem}
